@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { database } from "../../config/firebase";
+
 import HeaderPost from "../../components/HeaderPost"
+
 // import { Container } from './styles';
 
 export default class Post extends Component {
@@ -22,7 +24,7 @@ export default class Post extends Component {
     });
     //const postSuccess = await this.getPostRequest(slug);
     //console.log(postSuccess);
-    
+
     // this.setState({
     //   post: postSuccess
     // });

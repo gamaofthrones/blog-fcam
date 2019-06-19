@@ -4,6 +4,8 @@ import { Container, LeadForm } from "./styles";
 
 import { b2cDomain } from "../../consts/b2c_array";
 
+import Destaque from "../../components/Destaque";
+
 class Main extends Component {
   state = {
     email: "",
@@ -55,6 +57,7 @@ class Main extends Component {
     return (
       <Fragment>
         <Container>
+          <Destaque>teste</Destaque>
           <LeadForm onSubmit={this.handleSubmit} type="post">
             <label htmlFor="nome">Nome</label>
             <input

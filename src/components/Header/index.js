@@ -1,18 +1,23 @@
 import React from "react";
 
-import { Container, Menu, NavMenu } from "./styles";
+import {
+  HeaderBlog,
+  HeaderContainer,
+  HeaderLogo,
+  HeaderNavigation
+} from "./styles";
 
 const Header = () => (
-  <Container>
-    <header>
-      <Menu>Blog</Menu>
-      <NavMenu>
-        <li>
-          <span>Link</span>
-        </li>
-      </NavMenu>
-    </header>
-  </Container>
+  <HeaderBlog>
+    <HeaderContainer>
+      <HeaderLogo>Logo</HeaderLogo>
+      <HeaderNavigation>
+        <li>Categoria 1</li>
+        <li>Categoria 1</li>
+        <li>Categoria 1</li>
+      </HeaderNavigation>
+    </HeaderContainer>
+  </HeaderBlog>
 );
 
 export default Header;

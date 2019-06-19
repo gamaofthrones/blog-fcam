@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { database } from "../../config/firebase";
-
 import HeaderPost from "../../components/HeaderPost"
-
+import Helmet from 'react-helmet'
 // import { Container } from './styles';
 
 export default class Post extends Component {
@@ -24,7 +23,7 @@ export default class Post extends Component {
     });
     //const postSuccess = await this.getPostRequest(slug);
     //console.log(postSuccess);
-
+    
     // this.setState({
     //   post: postSuccess
     // });
@@ -42,6 +41,15 @@ export default class Post extends Component {
 
     return (
       <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <meta name="robots" content="index, follow, noarchive"/>
+          <meta name="keywords" content="criar okr, OKR, metas, implementação okr, o que é okr, passos okr,
+          gestão de negócios, gestão ágil, cases okr, metas, gestão, metodologia okr"/>
+          <title>OKR na Prática: o que é a metodologia e porque é essencial - Posts</title>
+          <meta name="description" content="Encontre aqui tudo sobre OKR: erros mais comuns, casos de sucesso,
+          ganhos que o OKR pode proporcionar, empresas que souberam usar o OKR, saiba mais sobre OKR."/>
+        </Helmet>
         <HeaderPost></HeaderPost>
       </div>
     );

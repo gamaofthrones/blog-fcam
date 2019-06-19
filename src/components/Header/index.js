@@ -10,7 +10,7 @@ import {
 const Header = () => (
   <HeaderBlog>
     <HeaderContainer>
-      <HeaderLogo>Logo</HeaderLogo>
+      <HeaderLogo><img src="/imgs/logo.png" alt="logo"/></HeaderLogo>
       <HeaderNavigation>
         <li>Categoria 1</li>
         <li>Categoria 1</li>

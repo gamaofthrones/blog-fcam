@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { database } from "../../config/firebase";
 import { Container, LeadForm } from "./styles";
+import Helmet from 'react-helmet'
 
 import { b2cDomain } from "../../consts/b2c_array";
 
@@ -56,8 +57,16 @@ class Main extends Component {
     const { email, nome } = this.state; //, ip, tipo, data_hora
     return (
       <Fragment>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <meta name="robots" content="index, follow, noarchive"/>
+          <meta name="keywords" content="definição de okr, gestão, princípios okr, como funciona okr,
+          gestão de negócios, erros okr, benefícios okr, solução okr, passos okr, metodologia okr"/>
+          <title>OKR na Prática: o que é a metodologia e porque é essencial</title>
+          <meta name="description" content="O que é; Definição; casos de sucesso e passo a passo
+          para planejamento e execução do OKR na sua empresa."/>
+        </Helmet>
         <Container>
-          <Destaque>teste</Destaque>
           <LeadForm onSubmit={this.handleSubmit} type="post">
             <label htmlFor="nome">Nome</label>
             <input

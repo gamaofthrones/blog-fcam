@@ -29,7 +29,7 @@ class Main extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    let { email, nome, ip, tipo, data_hora } = this.state; //, tipo, data_hora
+    let { email, nome, ip, tipo, data_hora } = this.state; //
     const address = email.split("@").pop();
 
     ip = await this.findMyIp();

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { database } from "../../config/firebase";
+
+import HeaderPost from "../../components/HeaderPost"
+
 // import { Container } from './styles';
 
 export default class Post extends Component {
@@ -19,8 +22,9 @@ export default class Post extends Component {
         posts: p
       });
     });
-    // const postSuccess = await this.getPostRequest(slug);
-    // console.log(postSuccess);
+    //const postSuccess = await this.getPostRequest(slug);
+    //console.log(postSuccess);
+
     // this.setState({
     //   post: postSuccess
     // });
@@ -38,8 +42,7 @@ export default class Post extends Component {
 
     return (
       <div>
-        <p>{this.state.slug}</p>
-        <p>{this.state.post}</p>
+        <HeaderPost></HeaderPost>
       </div>
     );
   }

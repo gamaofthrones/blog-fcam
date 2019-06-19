@@ -7,7 +7,7 @@ const Header = () => (
   <HeaderBlog>
     <div className="menu">
       <div className="menu-logo">
-        <a to="#">
+        <a href="/">
           <HeaderLogo>
             <img src={logo} alt="logo okr na prática" />
           </HeaderLogo>
@@ -16,16 +16,16 @@ const Header = () => (
       <nav className="menu-nav">
         <ul>
           <li>
-            <a href="#sobre">Sobre</a>
+            <a href="#sobre">Matérias</a>
           </li>
           <li>
-            <a href="#produtos">Produtos</a>
+            <Link to="/ebook">E-book</Link>
           </li>
           <li>
-            <a href="#preco">Preço</a>
+            <a href="#preco">Sobre nós</a>
           </li>
           <li>
-            <a href="#qualidade">Qualidade</a>
+            <a href="#qualidade"> Contato</a>
           </li>
         </ul>
       </nav>

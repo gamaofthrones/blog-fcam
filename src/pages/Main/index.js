@@ -5,22 +5,44 @@ import Helmet from 'react-helmet'
 
 import { b2cDomain } from "../../consts/b2c_array";
 
+import Header from "../../components/Header";
 import Destaque from "../../components/Destaque";
 
 class Main extends Component {
-  state = {
-    email: "",
-    nome: "",
-    ip: "",
-    tipo: "",
-    data_hora: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      nome: "",
+      ip: "",
+      tipo: "",
+      posts: [],
+      data_hora: ""
+    };
+    console.log(props, "");
+  }
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  //componentDidMount = () => {};
-  //const teste =  b2cDomain.some(d => d === address) ? "b2c": "b2b";
+  componentDidMount = async () => {
+    const posts = await database.ref("posts");
+    posts.on("value", async snapshot => {
+      let p = await snapshot.val();
+      this.setState({
+        posts: p
+      });
+      this.getPosts();
+    });
+  };
+
+  getPosts = async () => {
+    await localStorage.setItem(
+      "@Okrnapratica:posts",
+      JSON.stringify([...this.state.posts])
+    );
+    console.log(this.state);
+  };
 
   async findMyIp() {
     const ip = await fetch("http://httpbin.org/ip");
@@ -67,6 +89,7 @@ class Main extends Component {
           para planejamento e execução do OKR na sua empresa."/>
         </Helmet>
         <Container>
+
           <LeadForm onSubmit={this.handleSubmit} type="post">
             <label htmlFor="nome">Nome</label>
             <input

@@ -7,11 +7,11 @@ import Post from "../pages/Main/post";
 import Login from "../pages/Auth/login";
 import Admin from "../pages/Admin";
 
-const Routes = () => (
+const Routes = props => (
   <BrowserRouter>
     <Fragment>
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" teste={props} component={Main} />
         <Route path="/post/blog/:slug" component={Post} />
         <Route path="/login" component={Login} />
         <Route path="/admin" component={Admin} />

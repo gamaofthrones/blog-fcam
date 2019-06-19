@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-  @import url('https://fonts.googleapis.com/css?family=Lato');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
   * {
     margin: 0;
     padding: 0;
@@ -12,10 +12,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #ECF0F1;
+    background: #FFF;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   html, body, #root{

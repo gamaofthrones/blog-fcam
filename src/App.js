@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import GlobalStyled from "./styles/global";
 
 import Colors from "./styles/settings/colors";
@@ -8,14 +8,28 @@ import Footer from "./components/Footer";
 
 import Routes from "./routes";
 
-const App = () => (
-  <Fragment>
-    <Header />
-    <Routes />
-    <Footer />
-    <Colors />
-    <GlobalStyled />
-  </Fragment>
-);
-
-export default App;
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      nome: "",
+      ip: "",
+      tipo: "",
+      posts: [],
+      data_hora: "",
+      teste: "teste"
+    };
+  }
+  render() {
+    return (
+      <Fragment>
+        <Header />
+        <Routes teste={this.state.teste} />
+        <Footer />
+        <Colors />
+        <GlobalStyled />
+      </Fragment>
+    );
+  }
+}

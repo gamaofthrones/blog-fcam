@@ -1,22 +1,35 @@
 import React from "react";
-
-import {
-  HeaderBlog,
-  HeaderContainer,
-  HeaderLogo,
-  HeaderNavigation
-} from "./styles";
+import { Link } from "react-router-dom";
+import logo from "../../img/logo_okr.png";
+import { HeaderBlog, HeaderLogo } from "./styles";
 
 const Header = () => (
   <HeaderBlog>
-    <HeaderContainer>
-      <HeaderLogo>Logo</HeaderLogo>
-      <HeaderNavigation>
-        <li>Categoria 1</li>
-        <li>Categoria 1</li>
-        <li>Categoria 1</li>
-      </HeaderNavigation>
-    </HeaderContainer>
+    <div className="menu">
+      <div className="menu-logo">
+        <a to="#">
+          <HeaderLogo>
+            <img src={logo} alt="logo okr na prática" />
+          </HeaderLogo>
+        </a>
+      </div>
+      <nav className="menu-nav">
+        <ul>
+          <li>
+            <a href="#sobre">Sobre</a>
+          </li>
+          <li>
+            <a href="#produtos">Produtos</a>
+          </li>
+          <li>
+            <a href="#preco">Preço</a>
+          </li>
+          <li>
+            <a href="#qualidade">Qualidade</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </HeaderBlog>
 );
 

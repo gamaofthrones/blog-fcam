@@ -4,42 +4,39 @@ import { database } from "../../config/firebase";
 
 export default class Post extends Component {
   state = {
+    loading: false,
     posts: [],
     post: "",
+    teste: "",
     slug: this.props.match.params.slug
   };
 
   async componentDidMount() {
-    const posts = await database.ref("posts");
-    const slug = this.props.match.params.slug;
+    this.state.posts = await JSON.parse(
+      localStorage.getItem("@Okrnapratica:posts")
+    );
+    const slug = await this.props.match.params.slug;
+    const postList = await this.state.posts;
 
-    posts.on("value", async snapshot => {
-      let p = await snapshot.val();
-      this.setState({
-        posts: p
-      });
-    });
-    // const postSuccess = await this.getPostRequest(slug);
-    // console.log(postSuccess);
-    // this.setState({
-    //   post: postSuccess
-    // });
-    // console.log(posts, "teste");
+    this.state.teste = await this.getPostRequest(slug, postList);
+    console.log(this.state.slug);
   }
 
-  getPostRequest(slug) {
-    let postList = this.state.posts;
-    let res = postList.filter(it => new RegExp(slug, "i").test(it.slug));
+  async getPostRequest() {
+    this.state.posts = await this.state.posts.filter(Boolean);
+    let res = await this.state.posts.filter(it =>
+      new RegExp(this.state.slug || "", "i").test(it.slug)
+    );
+
     console.log(res[0]);
     return res[0];
   }
   render() {
-    if (this.state.posts) this.getPostRequest(this.state.slug);
-
+    const teste = console.log(this.getPostRequest());
+    console.log(teste);
     return (
       <div>
         <p>{this.state.slug}</p>
-        <p>{this.state.post}</p>
       </div>
     );
   }

@@ -47,7 +47,7 @@ class Routes extends Component {
       <BrowserRouter>
         <Fragment>
           <Switch>
-            <Route exact path="/" render={() => <Main />} />
+            <Route exact path="/" component={Main} />
 
             <Route path="/post/blog/:slug" component={Post} />
             <Route path="/ebook" component={Ebook} />

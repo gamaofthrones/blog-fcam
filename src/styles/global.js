@@ -19,10 +19,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #root{
-    height:100%;
-
+    height:100vh;
+    width: 100vw;
   }
-
+  a{
+    text-decoration:none;
+    color: inherit
+  }
+  a:visited{ color: inherit }
   input, button{
     font-family: 'Lato', sans-serif;
   }

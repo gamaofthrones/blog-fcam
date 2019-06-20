@@ -2,13 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 const Colors = createGlobalStyle`
     :root {
-        --color-primary-blue-0: #009BA3;
+        --color-primary-blue-0: #00a7b0;
         --color-primary-blue-1: #009BA3;
         --color-primary-blue-2: #005257;
-
+    
         --color-secondary-blue-0: #09649C;
         --color-secondary-blue-1: #085B8E;
-        --color-secondary-blue-2: #074B75;
+        --color-secondary-blue-2: #074B75; 
 
         --color-secondary-rust-0: #BA3C13;
         --color-secondary-rust-1: #AD3811;

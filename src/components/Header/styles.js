@@ -6,7 +6,7 @@ export const HeaderBlog = styled.div`
 
   .menu {
     height: 60px;
-    max-width: 960px;
+    max-width: 1050px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -55,6 +55,9 @@ export const HeaderContainer = styled.div`
   /* justify-content: space-around; */
 `;
 
+export const SubscriptionContainer = styled.div`
+  background: var(--color-primary-blue-1);
+`;
 export const HeaderLogo = styled.div`
   background: var(--color-primary-blue-0);
 
